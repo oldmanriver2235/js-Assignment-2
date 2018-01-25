@@ -1,0 +1,2 @@
+# js-assignment-2
+In this assignment, students are tasked with writing a function, ```chooseRandom```, which takes an array and a number and returns a new array containing the given number of random elements selected from the given array. Students should use the MDN documentation and the information from their lesson about transducers to create this function. Lastly, students must export their ```createRandom``` function from the lib.js file and import it into index.js where they will write some custom JavaScript test cases to use their new function with.
