@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "pretest": "babel src -d lib",
-    "test": "mocha -R nyan lib/test.js"
+    "test": "mocha lib/test.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
