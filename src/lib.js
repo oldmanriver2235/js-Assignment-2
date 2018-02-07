@@ -1,5 +1,1 @@
-// TODO implement chooseRandom function
-
-
-
-// TODO export chooseRandom
+// TODO implement chooseRandom function and export it

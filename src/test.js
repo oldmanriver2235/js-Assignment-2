@@ -1,24 +1,37 @@
-import chai from 'chai'
-import { chooseRandom } from './lib'
+import jsv from 'jsverify'
 
-chai.should()
+import { chooseRandom } from './lib'
 
 describe('chooseRandom', () => {
   it('Should return an array', () => {
-    chooseRandom([1, 2, 3], 2).should.be.an('array')
+    jsv.assertForall('array nat', (arr) => {
+      return Array.isArray(chooseRandom(arr))
+    })
   })
-  it('Should not mutate the array passed in', () => {
-    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    chooseRandom(arr, 5)
-    arr.should.deep.equal([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+  it('Should not mutate the array', () => {
+    jsv.assertForall('array nat', (arr) => {
+      const arrBefore = arr
+      chooseRandom(arr)
+      return arrBefore === arr
+    })
   })
-  it('Should return a random array', () => {
-    const arr = Array(100).fill().map((elem, index) => index + 1)
-    const rand = chooseRandom(arr, 5)
-    rand.should.not.deep.equal(arr)
+  it('Should default to return an empty array', () => {
+    jsv.assert(() => {
+      return chooseRandom().length === 0
+    })
   })
-  it('Should return an array of the passed in length', () => {
-    chooseRandom([1, 2, 3, 4, 5], 3).should.have.lengthOf(3)
-    chooseRandom(Array(100).fill().map((elem, index) => index + 1), 15).should.have.lengthOf(15)
+  it('Should return an array with length equal to the given number (if provided)', () => {
+    jsv.assertForall('array nat', (arr) => {
+      if (arr.length === 0 || arr.length === 1) {
+        // Here the numItems value given to chooseRandom is irrelevent as
+        // an array of length 0 or 1 should just return the given array
+        // with no possibility of randomization.
+        return arr === chooseRandom(arr, 948672894968) &&
+          arr === chooseRandom(arr, 0) &&
+          arr === chooseRandom(arr)
+      }
+      const random = chooseRandom(arr, 2)
+      return random.length === 2
+    })
   })
 })
