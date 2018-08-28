@@ -1,17 +1,11 @@
 # ChooseRandom Assignment
 
-Students are to implement the ```chooseRandom``` function from the skeleton provided in ```lib.js```. This function takes an ```array``` and the number of random items to choose from the array (```numItems```). It should return a new array containing the correct number of randomly selected, unique items from the original array.
-
-Students should use the MDN documentation and the information from their lesson about functional programming and, specifically, transducers to create this function. Lastly,
-students must export their ```createRandom``` function from the lib.js file in order to run the included test cases.
+Students are to implement the ```chooseRandom``` function from the skeleton provided in ```lib.js```. This function takes an ```array``` and the number of random items to choose from the array (```numItems```). It should return a new array containing the correct number of randomly selected, unique items from the original array. Students must export their ```createRandom``` function from the lib.js file in order to run the included test cases.
 
 ## Goal
 
 ---
-
-Expose students to functional programming fundamentals by having them use transducers which were introduced in ES6 and
-immutably transform arrays. Unfortunately, because ```chooseRandom``` should do exactly what it says, it will not be
-referentially transparent and therefore is not a pure function.
+Have students practice a more complex problem in JavaScript which will allow them to explore more features of the language than some of the fundamental code wars problems offer.
 
 ## Tasks
 
