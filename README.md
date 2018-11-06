@@ -22,4 +22,4 @@ Have students practice a more complex problem in JavaScript which will allow the
 - [ ] Should not mutate the array passed in
 - [ ] Should return a random array if possible (size > 1)
 - [ ] Should return an array of the passed in length
-- [ ] Run command ```npm test``` and ensure all tests pass successfully
+- [ ] Run command ```npm run test``` and ensure all tests pass successfully
