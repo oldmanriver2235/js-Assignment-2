@@ -1,0 +1,10 @@
+//impure
+let taxPercent = 9.75
+
+const calculateTax = (price) => {
+    return price + price * taxPercent / 100)
+}
+console.log(calculateTax(20))
+
+//pure
+
